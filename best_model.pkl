@@ -1,0 +1,5 @@
+import pickle
+
+# Save the trained model
+with open("best_model.pkl", "wb") as file:
+    pickle.dump(best_model, file)
