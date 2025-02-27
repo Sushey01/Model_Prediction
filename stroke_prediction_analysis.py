@@ -52,7 +52,7 @@ import matplotlib.pyplot as plt
 """
 
 # Load the dataset
-df = pd.read_csv('/kaggle/input/stroke-prediction-dataset/healthcare-dataset-stroke-data.csv')
+df = pd.read_csv('healthcare-dataset-stroke-data.csv')
 
 print(df.head)
 
@@ -338,4 +338,9 @@ report = classification_report(y_test, y_pred)
 print("Classification Report:")
 print(report)
 
-pip install Flask
+import pickle
+
+# Assuming 'best_model' is your trained model
+with open("best_model.pkl", "wb") as file:
+    pickle.dump(best_model, file)
+    
