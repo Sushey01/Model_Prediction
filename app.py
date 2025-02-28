@@ -4,14 +4,12 @@ import joblib
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder
-import streamlit as st
 
 # This must be the first command
 st.set_page_config(page_title="Stroke Prediction System", layout="wide")
 
 # Add your application logic here
 st.title("Stroke Prediction System")
-st.write("This app predicts the likelihood of stroke.")
 
 # Load the model and scaler
 @st.cache_resource
@@ -29,7 +27,7 @@ model, scaler = load_model()
 
 # Define feature input function
 def get_user_input():
-    st.sidebar.header("User  Input Features")
+    st.sidebar.header("User Input Features")
     gender = st.sidebar.selectbox("Gender", ["Male", "Female", "Other"])
     age = st.sidebar.number_input("Age", min_value=1, max_value=100, value=40, help="Enter your age.")
     hypertension = st.sidebar.selectbox("Hypertension", ["No", "Yes"], help="Have you ever been diagnosed with hypertension?")
@@ -57,8 +55,6 @@ def get_user_input():
     return pd.DataFrame([user_data])
 
 # Streamlit UI
-st.set_page_config(page_title="Stroke Prediction System", layout="wide")
-st.title("Stroke Prediction System")
 st.markdown("### Enter the following details to predict stroke risk.")
 
 if model is None:
