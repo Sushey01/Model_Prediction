@@ -6,8 +6,12 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder
 import streamlit as st
 
-# Set the page config as the first command
+# This must be the first command
 st.set_page_config(page_title="Stroke Prediction System", layout="wide")
+
+# Add your application logic here
+st.title("Stroke Prediction System")
+st.write("This app predicts the likelihood of stroke.")
 
 # Load the model and scaler
 @st.cache_resource
