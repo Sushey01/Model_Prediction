@@ -4,6 +4,10 @@ import joblib
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder
+import streamlit as st
+
+# Set the page config as the first command
+st.set_page_config(page_title="Stroke Prediction System", layout="wide")
 
 # Load the model and scaler
 @st.cache_resource
