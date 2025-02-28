@@ -45,7 +45,12 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+from sklearn.model_selection import GridSearchCV
 import matplotlib.pyplot as plt
+import kagglehub as kh
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import cross_val_score
+import xgboost as xgb
 
 """# EDA
 
@@ -273,6 +278,35 @@ for model_name, model in models.items():
     accuracy = accuracy_score(y_test, y_pred)  # Calculate accuracy
     results[model_name] = accuracy  # Store results
 
+
+# Define the RandomForest model
+rf_model = RandomForestClassifier(random_state=42)
+
+# Define the hyperparameter grid
+# Define the hyperparameter grid
+param_grid = {
+    'n_estimators': [50, 100, 200],  # Number of trees in the forest
+    'max_depth': [None, 10, 20, 30],  # Maximum depth of the tree
+    'min_samples_split': [2, 5, 10],  # Minimum number of samples required to split an internal node
+    'min_samples_leaf': [1, 2, 4],    # Minimum number of samples required to be at a leaf node
+    'max_features': ['auto', 'sqrt'],  # Number of features to consider when looking for the best split
+}
+
+# Set up the GridSearchCV
+grid_search = GridSearchCV(estimator=rf_model, param_grid=param_grid, 
+                           cv=5, n_jobs=-1, verbose=2, scoring='accuracy')
+
+# Fit the model
+grid_search.fit(X_train, y_train)
+
+# Get the best parameters and best score
+print("Best Parameters:", grid_search.best_params_)
+print("Best Cross-Validation Score:", grid_search.best_score_)
+
+# Use the best model from grid search
+best_rf_model = grid_search.best_estimator_
+
+
 # Convert results to DataFrame for better visualization
 results_df = pd.DataFrame(list(results.items()), columns=['Model', 'Accuracy'])
 results_df = results_df.sort_values(by='Accuracy', ascending=False)
@@ -343,4 +377,9 @@ import pickle
 # Assuming 'best_model' is your trained model
 with open("best_model.pkl", "wb") as file:
     pickle.dump(best_model, file)
+
+# Save the scaler object
+# Save the scaler object
+with open("scaler.pkl", "wb") as file:
+    pickle.dump(scaler, file)
     
