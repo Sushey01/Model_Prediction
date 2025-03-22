@@ -6,7 +6,7 @@ This project analyzes stroke risk factors using **machine learning** on the [Str
 ## 📊 Dataset  
 The dataset contains **11 features**, including `age`, `hypertension`, `heart disease`, `avg_glucose_level`, etc.  
 
-📄 [Full Report]([.file/report]The report has been pushed in the repository! So please kindly visit my repository!)
+📄 [Full Report]The report has been pushed in the repository! So please kindly visit my repository!)
 
 
 ## 🚀 Installation  
