@@ -31,3 +31,67 @@ Clone the repository and install dependencies:
 git clone https://github.com/Sushey01/Model_Prediction.git  
 cd Model_Prediction  
 pip install -r requirements.txt  
+
+
+
+## HOW TO USE THE APP LOCALLY:
+streamlit run app.py
+2️⃣ Enter patient details (Age, Glucose Level, BMI, etc.).
+3️⃣ Click "Predict" to see stroke risk probability.
+
+
+## KEY FINDINGS
+* Higher age and high glucose levels significantly increase stroke risk.
+
+* Hypertension and heart disease are critical risk factors.
+
+* Random Forest model achieved 92% accuracy.
+
+* Feature Engineering (One-Hot Encoding, Age Binning) improved model performance.
+
+* People who never smoked had a lower risk of stroke.
+
+* Men had a slightly higher stroke risk than women in this dataset.
+
+
+
+## 📊 Model Performance & Comparison
+Several machine learning models were tested, with the following results:
+
+Model	Accuracy
+Random Forest	- 92%
+Gradient Boosting	- 89%
+Logistic Regression -	85%
+Support Vector Machine (SVM) - 82%
+Decision Tree	- 78%
+
+
+
+##  🤝 Contributing
+If you’d like to contribute to this project, follow these steps:
+
+* Fork the repository
+
+1. Create a feature branch (git checkout -b feature-name)
+
+2. Commit your changes (git commit -m "Added new feature")
+
+3. Push to GitHub (git push origin feature-name)
+
+4. Open a Pull Request
+
+
+
+
+## 🎯 Future Improvements
+✅ Improve UI/UX for the Streamlit app
+
+✅ Add deep learning models (e.g., Neural Networks)
+
+✅ Perform hyperparameter tuning for better accuracy
+
+✅ Deploy the app on multiple cloud platforms
+
+
+## LICENSE
+This project is licensed under the MIT License.
