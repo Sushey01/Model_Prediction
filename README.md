@@ -6,7 +6,7 @@ This project analyzes stroke risk factors using **machine learning** on the [Str
 ## 📊 Dataset  
 The dataset contains **11 features**, including `age`, `hypertension`, `heart disease`, `avg_glucose_level`, etc.  
 
-📄 [Full Report]([.file/report][file:///C:/Users/lakpa/Downloads/StrokePredictionAnalysis_ShekharLamichhaneMagar_23189647.pdf)
+📄 [Full Report]([.file/report][file:///C:/Users/lakpa/Downloads/StrokePredictionAnalysis_ShekharLamichhaneMagar_23189647.pdf])
 
 
 ## 🚀 Installation  
